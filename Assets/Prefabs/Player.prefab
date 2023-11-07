@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6251152434302712341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7063968310337529481}
+  - component: {fileID: 1262024652379110350}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,3 +117,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262024652379110350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063968310337529482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462006ee0ae28fd459b6672f2645045e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _playerMoveActions:
+    m_Name: Player Move Actions
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0bead493-4bac-45e8-91a1-e86bf9bf094e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: MovementWithAD
+      m_Id: a12e1253-083c-4d70-8edd-49fb3e03679d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 246523cf-c473-4082-a243-209d9132eff1
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c7ed903a-03a3-4ecd-bd15-945d2b4edd96
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 8
+    - m_Name: MovementWtihArrowKeys
+      m_Id: fa0939dd-2296-4ed7-80c1-f50db3d1b441
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 2206966d-1a67-4641-b519-db1ec9aebec2
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 8ae7794e-1ec1-4985-aa81-bd362d1527fc
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Move Actions
+      m_Flags: 8
+    m_Flags: 0

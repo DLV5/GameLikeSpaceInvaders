@@ -207,135 +207,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1507571549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063968310337529482, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
-  m_PrefabInstance: {fileID: 7063968309151224279}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1507571551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507571549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 462006ee0ae28fd459b6672f2645045e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 5
-  _playerMoveActions:
-    m_Name: Player Move Actions
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9757b93e-f162-4fc1-89f1-9dea92d23088
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: MovementWithAD
-      m_Id: 9166da18-dbb4-4448-a2d2-e637f7083cf1
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: f485efad-dbe9-4856-a2a2-2cc222bf4515
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: daa8ddbe-4b18-4be1-8f7e-985e3c6b4029
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 8
-    - m_Name: MovementWithKeys
-      m_Id: 176e9b7c-f285-474a-bbb4-e777688b5af5
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 607f1f98-0d83-4149-b552-97b9c57f9155
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 881961eb-9a1f-450d-a19e-eea48e8cc5a0
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Move Actions
-      m_Flags: 8
-    m_Flags: 0
---- !u!1001 &7063968309151224279
+--- !u!1001 &1522218247
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 2132664203942660797, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529481, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+    - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7063968310337529482, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0a30b15afc03a844c97553bd2548a1e9, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
