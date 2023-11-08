@@ -219,12 +219,16 @@ PrefabInstance:
       value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3986034297612121921, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
-      propertyPath: _bottomMargin
-      value: 4
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 8053637176819481678, guid: 095b26d0033feea4f81d263862268dcf, type: 3}
+    - target: {fileID: 3986034297612121921, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
+      propertyPath: _numberOfEnemiesInRow
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3986034297612121921, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
-      propertyPath: _leftAndRightMargin
-      value: 1
+      propertyPath: _numberOfColumnsWithEnemies
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_RootOrder

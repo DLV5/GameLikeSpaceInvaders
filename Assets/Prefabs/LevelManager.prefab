@@ -61,8 +61,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _topMargin: 1
-  _bottomMargin: 2
-  _leftAndRightMargin: 11
+  _bottomMargin: 4
+  _leftAndRightMargin: 1
+  _numberOfEnemiesInRow: 0
+  _numberOfColumnsWithEnemies: 0
+  _enemyPrefab: {fileID: 0}
 --- !u!1 &3404998960347967007
 GameObject:
   m_ObjectHideFlags: 0
