@@ -218,6 +218,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3986034297612121921, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
+      propertyPath: _bottomMargin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986034297612121921, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
+      propertyPath: _leftAndRightMargin
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8405230371308456341, guid: 5b2ff2a690f7fe642bdecfc8b8d673ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
