@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int _numberOfRowsWithEnemies;
 
     [SerializeField] private GameObject _enemyPrefab;
+    //private EnemyMovement _previousEnemyMovementScript;
 
     private Rectangular _spawnZone;
 
@@ -38,11 +39,25 @@ public class EnemySpawner : MonoBehaviour
         float sizeOfOneColumn = _spawnZone.Height / _numberOfRowsWithEnemies;
         for (int i = 0; i < _numberOfRowsWithEnemies; i++)
         {
+            //Creating enemy container for future movement
+            GameObject _enemyContainer = new GameObject($"EnemyContainer {i}");
+            _enemyContainer.transform.parent = transform;
+
+            _enemyContainer.AddComponent<EnemyContainer>();
+            EnemyContainer enemyContainerScript = _enemyContainer.GetComponent<EnemyContainer>();
             float yCordinateToSpawn = sizeOfOneColumn * i + (sizeOfOneColumn - _enemyPrefab.transform.lossyScale.y - _spawnZone.Height) / 2;
             for (int j = 0; j < _numberOfEnemiesInColumn; j++)
             {
                 float xCordinateToSpawn = sizeOfOneRow * j + (sizeOfOneRow - _enemyPrefab.transform.lossyScale.x - _spawnZone.Width) / 2;
-                Instantiate(_enemyPrefab, new Vector2(xCordinateToSpawn, yCordinateToSpawn), Quaternion.identity);
+                GameObject enemy = Instantiate(_enemyPrefab, new Vector2(xCordinateToSpawn, yCordinateToSpawn), Quaternion.identity);
+                enemy.transform.parent = _enemyContainer.transform;
+                enemyContainerScript.AddEnemyToContainer(enemy);
+                //EnemyMovement currentEnemyMovementScript = enemy.GetComponent<EnemyMovement>();
+                //if (_previousEnemyMovementScript != null)
+                //{
+                //    _previousEnemyMovementScript.RightNeighborEnemy = currentEnemyMovementScript;
+                //}
+                //_previousEnemyMovementScript = currentEnemyMovementScript;
             }
         }
     }
