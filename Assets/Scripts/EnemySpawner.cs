@@ -2,42 +2,18 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Spawn zone settings")]
-    [SerializeField] private float _topMargin;
-    [SerializeField] private float _bottomMargin;
-    [SerializeField] private float _leftAndRightMargin;
+    [SerializeField] private EnemySpawnData _spawnData;
 
-    [Header("Enemy amount settings")]
-    [SerializeField] private int _numberOfEnemiesInColumn;
-    [SerializeField] private int _numberOfRowsWithEnemies;
-
-    [SerializeField] private GameObject _enemyPrefab;
-    //private EnemyMovement _previousEnemyMovementScript;
-
-    private Rectangular _spawnZone;
+    private EnemySpawnZoneHandler _spawnZoneHandler;
 
     // Start is called before the first frame update
     void Start()
     {
-        #region CalculatingSpawnZoneRectangle
-        Vector2 _minScreenSize = Camera.main.ScreenToWorldPoint(Vector2.zero);
-        Vector2 _maxScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-
-        Vector2 _firstRectanglePoint = new Vector2(_minScreenSize.x + _leftAndRightMargin, _maxScreenSize.y - _topMargin);
-        Vector2 _secondRectanglePoint = new Vector2(_maxScreenSize.x - _leftAndRightMargin, _maxScreenSize.y - _topMargin);
-        Vector2 _thirdRectanglePoint = new Vector2(_maxScreenSize.x - _leftAndRightMargin, _minScreenSize.y + _bottomMargin);
-        Vector2 _forthRectanglePoint = new Vector2(_minScreenSize.x + _leftAndRightMargin, _minScreenSize.y + _bottomMargin);
-
-        //float _spawnZoneWidth = Vector2.Distance(_firstRectanglePoint, _secondRectanglePoint);
-        //float _spawnZoneHeight = Vector2.Distance(_secondRectanglePoint, _thirdRectanglePoint);
-
-        _spawnZone = new Rectangular(_firstRectanglePoint, _secondRectanglePoint, _thirdRectanglePoint, _forthRectanglePoint);
-
-        #endregion
+        _spawnZoneHandler = new EnemySpawnZoneHandler(_spawnData);
+       
         //Spawning enemies
-        float sizeOfOneRow = _spawnZone.Width / _numberOfEnemiesInColumn;
-        float sizeOfOneColumn = _spawnZone.Height / _numberOfRowsWithEnemies;
-        for (int i = 0; i < _numberOfRowsWithEnemies; i++)
+
+        for (int i = 0; i < _spawnData.NumberOfRowsWithEnemies; i++)
         {
             //Creating enemy container for future movement
             GameObject _enemyContainer = new GameObject($"EnemyContainer {i}");
@@ -45,11 +21,12 @@ public class EnemySpawner : MonoBehaviour
 
             _enemyContainer.AddComponent<EnemyContainer>();
             EnemyContainer enemyContainerScript = _enemyContainer.GetComponent<EnemyContainer>();
-            float yCordinateToSpawn = sizeOfOneColumn * i + (sizeOfOneColumn - _enemyPrefab.transform.lossyScale.y - _spawnZone.Height) / 2;
-            for (int j = 0; j < _numberOfEnemiesInColumn; j++)
+            float yCoordinateToSpawn = _spawnZoneHandler.GetYCoondinateToSpawn(i);
+            for (int j = 0; j < _spawnData.NumberOfEnemiesInColumn; j++)
             {
-                float xCordinateToSpawn = sizeOfOneRow * j + (sizeOfOneRow - _enemyPrefab.transform.lossyScale.x - _spawnZone.Width) / 2;
-                GameObject enemy = Instantiate(_enemyPrefab, new Vector2(xCordinateToSpawn, yCordinateToSpawn), Quaternion.identity);
+                float xCoordinateToSpawn = _spawnZoneHandler.GetXCoondinateToSpawn(j);
+                GameObject enemy = Instantiate(_spawnData.EnemyPrefab,
+                    new Vector2(xCoordinateToSpawn, yCoordinateToSpawn), Quaternion.identity);
                 enemy.transform.parent = _enemyContainer.transform;
                 enemyContainerScript.AddEnemyToContainer(enemy);
                 //EnemyMovement currentEnemyMovementScript = enemy.GetComponent<EnemyMovement>();
@@ -67,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
         if (!Application.isPlaying)
             return;
 
-        Vector2[] rectangularPoints = _spawnZone.GetAllPoints();
+        Vector2[] rectangularPoints = _spawnZoneHandler.SpawnZone.GetAllPoints();
 
         Gizmos.DrawLine(rectangularPoints[0], rectangularPoints[1]);
         Gizmos.DrawLine(rectangularPoints[1], rectangularPoints[2]);
