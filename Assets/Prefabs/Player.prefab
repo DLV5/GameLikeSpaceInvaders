@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7063968310337529481}
   - component: {fileID: 1262024652379110350}
+  - component: {fileID: 2190843124533411894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462006ee0ae28fd459b6672f2645045e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 2.5
   _playerMoveActions:
     m_Name: Player Move Actions
     m_Type: 0
@@ -186,4 +187,42 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Player Move Actions
       m_Flags: 8
+    m_Flags: 0
+--- !u!114 &2190843124533411894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063968310337529482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d346dd8f4b9b84f857e84d39492526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireRate: 1
+  _playerAttackActions:
+    m_Name: Player Attack Actions
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 17bfa7d0-36a2-42b8-a4c4-f37306117efe
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c54dfa52-e802-43ef-b7f4-3a7358f57b56
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Attack Actions
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 1b0187ab-7599-42c4-b303-1e38aacdeb4d
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Attack Actions
+      m_Flags: 0
     m_Flags: 0
