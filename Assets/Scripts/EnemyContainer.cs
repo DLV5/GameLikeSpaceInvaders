@@ -70,7 +70,7 @@ public class EnemyContainer : MonoBehaviour
         {
             _mostLeftEnemy = enemy;
         } 
-        else if(_mostRightEnemy == null || _mostRightEnemy.transform.position.x < enemy.transform.position.x) 
+        if(_mostRightEnemy == null || _mostRightEnemy.transform.position.x < enemy.transform.position.x) 
         { 
             _mostRightEnemy = enemy; 
         }
@@ -86,7 +86,13 @@ public class EnemyContainer : MonoBehaviour
             _boxCollider = GetComponent<BoxCollider2D>();
         }
 
-        _boxCollider.size = new Vector2(_enemiesInRow.Count, 1);
+        if(_mostLeftEnemy != null && _mostRightEnemy != null)
+        {
+            _boxCollider.size = new Vector2(Vector2.Distance(_mostLeftEnemy.transform.position
+                - _mostLeftEnemy.transform.lossyScale / 2,
+                _mostRightEnemy.transform.position 
+                + _mostRightEnemy.transform.lossyScale / 2), 1);
+        }
     }
 
     private void RecalculateColliderOffset()

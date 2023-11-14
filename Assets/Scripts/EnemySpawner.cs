@@ -18,9 +18,11 @@ public class EnemySpawner : MonoBehaviour
             //Creating enemy container for future movement
             GameObject _enemyContainer = new GameObject($"EnemyContainer {i}");
             _enemyContainer.transform.parent = transform;
+            _enemyContainer.transform.position = new Vector2(0, _spawnZoneHandler.GetYCoondinateToSpawn(i));
 
             _enemyContainer.AddComponent<EnemyContainer>();
             EnemyContainer enemyContainerScript = _enemyContainer.GetComponent<EnemyContainer>();
+
             float yCoordinateToSpawn = _spawnZoneHandler.GetYCoondinateToSpawn(i);
             for (int j = 0; j < _spawnData.NumberOfEnemiesInColumn; j++)
             {

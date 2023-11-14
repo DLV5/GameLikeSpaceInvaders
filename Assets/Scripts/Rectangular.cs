@@ -7,6 +7,11 @@ public class Rectangular
     private Vector2 _thirdRectanglePoint;
     private Vector2 _forthRectanglePoint;
 
+    public Vector2 FirstRectanglePoint { get => _firstRectanglePoint; }
+    public Vector2 SecondRectanglePoint { get => _secondRectanglePoint; }
+    public Vector2 ThirdRectnaglePoint { get => _thirdRectanglePoint; }
+    public Vector2 ForthRectanglePoint { get => _forthRectanglePoint; }
+
     public float Width
     {
         get => Vector2.Distance(_firstRectanglePoint, _secondRectanglePoint);
