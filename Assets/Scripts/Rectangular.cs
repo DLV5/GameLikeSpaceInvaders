@@ -35,11 +35,4 @@ public class Rectangular
     {
         return new Vector2[] { _firstRectanglePoint, _secondRectanglePoint, _thirdRectanglePoint, _forthRectanglePoint };
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(_firstRectanglePoint, _secondRectanglePoint);
-        Gizmos.DrawLine(_secondRectanglePoint, _thirdRectanglePoint);
-        Gizmos.DrawLine(_thirdRectanglePoint, _forthRectanglePoint);
-        Gizmos.DrawLine(_forthRectanglePoint, _firstRectanglePoint);
-    }
 }

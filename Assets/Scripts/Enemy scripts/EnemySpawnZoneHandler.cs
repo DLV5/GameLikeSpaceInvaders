@@ -37,7 +37,7 @@ public class EnemySpawnZoneHandler
     }
     //Calculating Y position for enemy in row
     public float GetYCoondinateToSpawn(int index) => SizeOfOneRow * index +
-        (SizeOfOneRow - Height) / 2 - _spawnZone.ThirdRectnaglePoint.y;
+        (SizeOfOneRow - Height) / 2;
 
     //Calculating X position for each enemy in column
     public float GetXCoondinateToSpawn(int index) => SizeOfOneColumn * index +

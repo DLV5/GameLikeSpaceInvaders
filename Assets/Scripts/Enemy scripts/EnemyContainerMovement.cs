@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyContainerMovement : MonoBehaviour
 {
     private float _horizontalSpeed = 15f;
-    private float _verticalSpeed = 25f;
+    private float _verticalSpeed = 15f;
 
     /// <summary>
     /// "1" - to the right, "-1" - to the left
@@ -21,7 +21,7 @@ public class EnemyContainerMovement : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("MoveHorizontaly", 0f, .25f);
+        InvokeRepeating("MoveHorizontaly", 0f, GameManager.Instance.GameTick);
     }
 
     private void MoveHorizontaly()

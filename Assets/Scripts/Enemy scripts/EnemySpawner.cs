@@ -31,16 +31,15 @@ public class EnemySpawner : MonoBehaviour
                     new Vector2(xCoordinateToSpawn, yCoordinateToSpawn), Quaternion.identity);
                 enemy.transform.parent = _enemyContainer.transform;
                 enemyContainerScript.AddEnemyToContainer(enemy);
-                //EnemyMovement currentEnemyMovementScript = enemy.GetComponent<EnemyMovement>();
-                //if (_previousEnemyMovementScript != null)
-                //{
-                //    _previousEnemyMovementScript.RightNeighborEnemy = currentEnemyMovementScript;
-                //}
-                //_previousEnemyMovementScript = currentEnemyMovementScript;
             }
         }
+
+        transform.position = new Vector2(transform.position.x, (_spawnZoneHandler.SpawnZone.Height / 2));
     }
 
+    //I don't know exactly is it problem here in visualisatio or
+    //in calculations, but calculations looks allright, so I guess guizmo
+    //not working correctly, I will comment it by now
     private void OnDrawGizmos()
     {
         if (!Application.isPlaying)

@@ -36,7 +36,7 @@ public class EnemyContainerCalculator : MonoBehaviour
 
     private void OnEnable()
     {
-        Enemy.Destroyed += OnEnemyDestroyed;
+        EnemyHealth.Destroyed += OnEnemyDestroyed;
     }
 
     private void Start()
@@ -47,7 +47,7 @@ public class EnemyContainerCalculator : MonoBehaviour
 
     private void OnDisable()
     {
-        Enemy.Destroyed -= OnEnemyDestroyed;
+        EnemyHealth.Destroyed -= OnEnemyDestroyed;
     }
 
     public bool IsContainerExitedScreenBoundaries()
@@ -62,6 +62,7 @@ public class EnemyContainerCalculator : MonoBehaviour
 
         return isExitedLeftBoundary || isExitedRightBoundary || isExitedTopBoundary || isExitedBottomBoundary;
     }
+
     private void OnEnemyDestroyed(float xPositionOfEnemy)
     {
         if (_mostLeftEnemy == null || _mostRightEnemy == null)

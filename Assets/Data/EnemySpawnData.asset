@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76c07153f0d60c4fb6768cf1dff4c63, type: 3}
   m_Name: EnemySpawnData
   m_EditorClassIdentifier: 
-  TopMargin: 1
-  BottomMargin: 4
+  TopMargin: 0.5
+  BottomMargin: 6
   LeftAndRightMargin: 1
   NumberOfEnemiesInColumn: 5
   NumberOfRowsWithEnemies: 3

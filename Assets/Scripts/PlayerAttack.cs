@@ -8,7 +8,15 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _fireRate;
     [SerializeField] private InputAction _playerAttackActions;
 
+    [SerializeField] private GameObject _leftShootPoint;
+    [SerializeField] private GameObject _rightShootPoint;
+
+    [SerializeField] private GameObject _bulletPrefab;
+
     private bool _canShoot = true;
+
+    //Even number - left gun shootiong, odd number - right gun shooting
+    private int _counter = 0;
 
     private void OnEnable()
     {
@@ -31,9 +39,17 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnShoot()
     {
-        Debug.Log("Shoot!");
+        if(_counter % 2 == 0)
+        {
+            Instantiate(_bulletPrefab, _leftShootPoint.transform.position, Quaternion.identity);
+        } else
+        {
+            Instantiate(_bulletPrefab, _rightShootPoint.transform.position, Quaternion.identity);
+        }
+        _counter++;
         StartCoroutine(ProceedCooldown(_fireRate));
     }
+
     private IEnumerator ProceedCooldown(float fireRate)
     {
         _canShoot = false;
